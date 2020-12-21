@@ -1,0 +1,64 @@
+#wolf {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    text-align: center;
+}
+
+#wolf p {
+    padding: 10px;
+    background: #eee;
+    border-radius: 10px;
+    color: green;
+    font-family: 'Russo One', Arial, sans-serif;
+}
+
+#wolf p::after {
+    content: '\261d';
+}
+
+a[href^='https://'] {
+    color: red;
+}
+
+.list > li:last-of-type a {
+    background-color: green;
+}
+
+.list + p:first-of-type {
+    font-size: 26px;
+}
+
+.text-box h3:first-of-type {
+    color: pink;
+}
+
+#greycol {
+    color: grey;
+}
+
+div p:only-child {
+    color: red;
+}
+
+.text-box p:nth-of-type(3) {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.bg-box {
+    width: 450px;
+    height: 300px;
+    background-color: green;
+    background-image: url("../images/grass.png"),
+                      url("../images/bulb.png"),
+                      url("../images/donut.png"),
+                      url("../images/hedgehog.png"),
+                      url("../images/house.jpg");
+    background-position: bottom, top, right, left, center;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y, no-repeat;
+    background-size: 120px, 20px, 15px, 15px, 280px;
+}

@@ -1,0 +1,299 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #d3b514;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+  margin: 20px;
+}
+
+.menu {
+  display: flex;
+}
+
+#check {
+  opacity: 0;
+}
+.menu_btn {
+  display: none;
+}
+
+.menu_btn > span,
+.menu_btn > span::before,
+.menu_btn > span::after {
+  display: none;
+}
+
+.menu_btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu_btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.items {
+  display: flex;
+  list-style: none;
+}
+
+.item {
+  display: block;
+  margin-top: 10px;
+  padding: 15px 24px;
+  color: #c71585;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.item:hover {
+  background-color: #6C5577;
+  color: #ffffff;
+}
+
+#check:checked ~ .menu_btn > span {
+  transform: rotate(45deg);
+}
+#check:checked ~ .menu_btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#check:checked ~ .menu_btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#check:checked ~ .items {
+  visibility: visible;
+  right: 0;
+}
+
+.menu_btn > span,
+.menu_btn > span::before,
+.menu_btn > span::after {
+  transition-duration: .5s;
+}
+
+
+.page-content {
+  display: flex;
+  align-content: space-between;
+  flex: 1 0 auto;
+  justify-content: space-around;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+main p {
+  padding: 0 20px;
+}
+
+.work {
+  text-transform: uppercase;
+}
+
+.card-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #a8a8a8;
+  border-radius: 25px;
+  margin: 5px;
+  flex-basis: calc(100%/3.33);
+  flex-shrink: 0;
+  transition: box-shadow .5s;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.mountains {
+  margin: 10px;
+  height: 100px;
+  width: 105px;
+  border: 7px solid #c7b7b7;
+  border-radius: 50%;
+  transition: color .5s;
+}
+
+.button {
+  margin: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px 0 rgba(211, 181, 20, 0.50);
+}
+
+
+.card:hover .btn{
+  background-color: #9CB1C7;
+}
+
+.card:hover .mountains{
+  border: 7px solid #685174;
+}
+
+.btn {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #685174;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: background-color .5s;
+}
+
+.aside {
+  display: flex;
+  justify-content: center;
+  flex-basis: 210px;
+  flex-shrink: 0;
+}
+
+.aside1 {
+  background-color: #c798b9;
+  order: -1;
+}
+
+.aside2 {
+  background-color: #9cb1c7;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #86EC86;
+  width: 100%;
+}
+
+.page-footer h3 {
+  margin: 0;
+  padding: 10px;
+}
+
+@media (max-width: 1024px) {
+  .aside {
+    flex-shrink: 0.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu_btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .menu_btn > span,
+  .menu_btn > span::before,
+  .menu_btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #8a2be2;
+
+  }
+
+  .menu_btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu_btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  .items {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    min-width: 40%;
+    margin: 0;
+    padding: 40px 0;
+    text-align: center;
+    background-color: #86EC86;
+    box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+    transition-duration: .5s;
+  }
+
+  .page-content {
+    flex-direction: column;
+  }
+  .aside {
+    flex-basis: 110px;
+  }
+  .aside1 {
+    order: 0;
+  }
+  .card {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex-basis: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .card {
+    flex-basis: 100%;
+    border: none;
+    border-radius: 0;
+    border-top: solid #000000;
+  }
+  .card:hover {
+    box-shadow: none;
+  }
+  .aside {
+    flex-basis: 55px;
+  }
+}

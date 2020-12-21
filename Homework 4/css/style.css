@@ -1,0 +1,212 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.ex-first {
+    position: relative;
+    max-width: 550px;
+    min-height: 500px;
+    background-color: #0d5825;
+    margin: 60px auto;
+}
+
+.quote-block {
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px 0 60px;
+}
+
+.quote-text {
+    margin-bottom: 0;
+}
+
+.quote-text:before{
+    content: '\201C';
+}
+
+.quote-text:after {
+    content: '\201D';
+}
+
+.ace {
+    width: 150px;
+    position: absolute;
+    transition: .5s ease-in-out;
+}
+
+.first {
+    left: 20%;
+    transform: rotateZ(-30deg);
+}
+
+.first:hover {
+    transform: rotateZ(-30deg) translateY(-10%);
+}
+
+
+.second {
+    left: 35%;
+    transform: rotateZ(-10deg);
+}
+
+.second:hover {
+    transform: rotateZ(-10deg) translateY(-10%);
+
+}
+
+.third {
+    left: 55%;
+    transform: rotateZ(15deg);
+}
+
+.third:hover {
+    transform: rotateZ(15deg) translateY(-10%);
+}
+
+.ex-second {
+    margin: 70px auto;
+    display: block;
+    position: relative;
+    max-width: 550px;
+    min-height: 500px;
+}
+
+.square {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+.square:hover {
+    transition: background-color 1s ease;
+    background-color: #000000;
+}
+
+.red {
+    left: 25%;
+    background-color: lightcoral;
+    top: 150px;
+}
+
+.blue {
+    z-index: 2;
+    left: 40%;
+    top: 200px;
+    background-color: #7E8AEB;
+}
+
+.green {
+    left: 55%;
+    bottom: 150px;
+    background-color: #4DEF99;
+}
+
+.menu {
+    z-index: 10;
+    position: fixed;
+    height: 100%;
+    min-width: 300px;
+    left: -260px;
+    top: 0;
+    margin: 0;
+    padding: 20px;
+    transition: left 0.5s ease-in;
+    background-color: #808080;
+    color: white;
+}
+
+
+.vertical-text {
+    writing-mode: vertical-lr;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 88%;
+    transition: opacity 1s linear;
+}
+
+.listing {
+    list-style: none;
+    margin: 40px 0 0;
+    padding: 0;
+}
+
+.listing li {
+    padding-left: 20px;
+    line-height: 2;
+}
+
+.listing li:before{
+    content: '🔸 ';
+}
+
+.listing a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #ffffff;
+    transition: color .5s linear;
+}
+
+.menu:hover {
+    left: 0;
+}
+
+.listing a:hover {
+    color: #ff8c00;
+}
+
+.menu:hover .vertical-text{
+    opacity: 0;
+}
+
+.four-ex {
+    display: block;
+    max-width: 550px;
+    min-height: 450px;
+    margin: 85px auto;
+}
+
+.square-four {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background-color: #5f9ea0;
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    0% {
+        background-color: #5f9ea0;
+        left: 0;
+        top: 0;
+    }
+    25%  {
+        background-color: #ff1493;
+        left: 0;
+        top: 350px;
+    }
+    50%  {
+        background-color: #006400;
+        left: 450px;
+        top: 350px;
+    }
+    75%  {
+        background-color: #4b0082;
+        left: 450px;
+        top: 0;
+    }
+    100% {
+        background-color: #708090;
+        left: 0;
+        top: 0;
+    }
+}
